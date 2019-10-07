@@ -35,11 +35,21 @@
             this.drinksInput = new System.Windows.Forms.TextBox();
             this.friesInput = new System.Windows.Forms.TextBox();
             this.calculateTotalsButton = new System.Windows.Forms.Button();
-            this.subLabel = new System.Windows.Forms.Label();
+            this.subTotalOutput = new System.Windows.Forms.Label();
             this.subTotalLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.taxLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.totalOutput = new System.Windows.Forms.Label();
+            this.taxOutput = new System.Windows.Forms.Label();
+            this.bar = new System.Windows.Forms.Label();
+            this.tenderedLabel = new System.Windows.Forms.Label();
+            this.tenderedInput = new System.Windows.Forms.TextBox();
+            this.calculateChangeButton = new System.Windows.Forms.Button();
+            this.changeLabel = new System.Windows.Forms.Label();
+            this.changeOutput = new System.Windows.Forms.Label();
+            this.printReceiptButton = new System.Windows.Forms.Button();
+            this.newOrderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // burgerLabel
@@ -101,14 +111,15 @@
             this.calculateTotalsButton.TabIndex = 6;
             this.calculateTotalsButton.Text = "Calculate Totals";
             this.calculateTotalsButton.UseVisualStyleBackColor = true;
+            this.calculateTotalsButton.Click += new System.EventHandler(this.CalculateTotalsButton_Click);
             // 
-            // subLabel
+            // subTotalOutput
             // 
-            this.subLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subLabel.Location = new System.Drawing.Point(181, 203);
-            this.subLabel.Name = "subLabel";
-            this.subLabel.Size = new System.Drawing.Size(38, 23);
-            this.subLabel.TabIndex = 7;
+            this.subTotalOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalOutput.Location = new System.Drawing.Point(156, 205);
+            this.subTotalOutput.Name = "subTotalOutput";
+            this.subTotalOutput.Size = new System.Drawing.Size(63, 23);
+            this.subTotalOutput.TabIndex = 7;
             // 
             // subTotalLabel
             // 
@@ -139,7 +150,6 @@
             this.taxLabel.Size = new System.Drawing.Size(36, 19);
             this.taxLabel.TabIndex = 10;
             this.taxLabel.Text = "Tax";
-            this.taxLabel.Click += new System.EventHandler(this.Label2_Click);
             // 
             // titleLabel
             // 
@@ -151,17 +161,114 @@
             this.titleLabel.TabIndex = 11;
             this.titleLabel.Text = "Hambuguh Too";
             // 
+            // totalOutput
+            // 
+            this.totalOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOutput.Location = new System.Drawing.Point(156, 256);
+            this.totalOutput.Name = "totalOutput";
+            this.totalOutput.Size = new System.Drawing.Size(59, 23);
+            this.totalOutput.TabIndex = 12;
+            // 
+            // taxOutput
+            // 
+            this.taxOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxOutput.Location = new System.Drawing.Point(156, 228);
+            this.taxOutput.Name = "taxOutput";
+            this.taxOutput.Size = new System.Drawing.Size(59, 23);
+            this.taxOutput.TabIndex = 13;
+            // 
+            // bar
+            // 
+            this.bar.BackColor = System.Drawing.Color.Black;
+            this.bar.Location = new System.Drawing.Point(13, 283);
+            this.bar.Name = "bar";
+            this.bar.Size = new System.Drawing.Size(206, 11);
+            this.bar.TabIndex = 14;
+            // 
+            // tenderedLabel
+            // 
+            this.tenderedLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenderedLabel.Location = new System.Drawing.Point(12, 311);
+            this.tenderedLabel.Name = "tenderedLabel";
+            this.tenderedLabel.Size = new System.Drawing.Size(100, 23);
+            this.tenderedLabel.TabIndex = 15;
+            this.tenderedLabel.Text = "Tendered:";
+            // 
+            // tenderedInput
+            // 
+            this.tenderedInput.Location = new System.Drawing.Point(181, 311);
+            this.tenderedInput.Name = "tenderedInput";
+            this.tenderedInput.Size = new System.Drawing.Size(38, 20);
+            this.tenderedInput.TabIndex = 16;
+            // 
+            // calculateChangeButton
+            // 
+            this.calculateChangeButton.Location = new System.Drawing.Point(17, 338);
+            this.calculateChangeButton.Name = "calculateChangeButton";
+            this.calculateChangeButton.Size = new System.Drawing.Size(202, 24);
+            this.calculateChangeButton.TabIndex = 17;
+            this.calculateChangeButton.Text = "Calculate Change";
+            this.calculateChangeButton.UseVisualStyleBackColor = true;
+            this.calculateChangeButton.Click += new System.EventHandler(this.CalculateChangeButton_Click);
+            // 
+            // changeLabel
+            // 
+            this.changeLabel.AutoSize = true;
+            this.changeLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLabel.Location = new System.Drawing.Point(13, 369);
+            this.changeLabel.Name = "changeLabel";
+            this.changeLabel.Size = new System.Drawing.Size(72, 19);
+            this.changeLabel.TabIndex = 18;
+            this.changeLabel.Text = "Change:";
+            // 
+            // changeOutput
+            // 
+            this.changeOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeOutput.Location = new System.Drawing.Point(156, 369);
+            this.changeOutput.Name = "changeOutput";
+            this.changeOutput.Size = new System.Drawing.Size(81, 19);
+            this.changeOutput.TabIndex = 19;
+            // 
+            // printReceiptButton
+            // 
+            this.printReceiptButton.Location = new System.Drawing.Point(13, 392);
+            this.printReceiptButton.Name = "printReceiptButton";
+            this.printReceiptButton.Size = new System.Drawing.Size(206, 46);
+            this.printReceiptButton.TabIndex = 20;
+            this.printReceiptButton.Text = "Print Receipt";
+            this.printReceiptButton.UseVisualStyleBackColor = true;
+            this.printReceiptButton.Click += new System.EventHandler(this.PrintReceiptButton_Click);
+            // 
+            // newOrderButton
+            // 
+            this.newOrderButton.Location = new System.Drawing.Point(256, 414);
+            this.newOrderButton.Name = "newOrderButton";
+            this.newOrderButton.Size = new System.Drawing.Size(234, 24);
+            this.newOrderButton.TabIndex = 21;
+            this.newOrderButton.Text = "New Order";
+            this.newOrderButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(502, 450);
+            this.Controls.Add(this.newOrderButton);
+            this.Controls.Add(this.printReceiptButton);
+            this.Controls.Add(this.changeOutput);
+            this.Controls.Add(this.changeLabel);
+            this.Controls.Add(this.calculateChangeButton);
+            this.Controls.Add(this.tenderedInput);
+            this.Controls.Add(this.tenderedLabel);
+            this.Controls.Add(this.bar);
+            this.Controls.Add(this.taxOutput);
+            this.Controls.Add(this.totalOutput);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.taxLabel);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.subTotalLabel);
-            this.Controls.Add(this.subLabel);
+            this.Controls.Add(this.subTotalOutput);
             this.Controls.Add(this.calculateTotalsButton);
             this.Controls.Add(this.friesInput);
             this.Controls.Add(this.drinksInput);
@@ -185,11 +292,21 @@
         private System.Windows.Forms.TextBox drinksInput;
         private System.Windows.Forms.TextBox friesInput;
         private System.Windows.Forms.Button calculateTotalsButton;
-        private System.Windows.Forms.Label subLabel;
+        private System.Windows.Forms.Label subTotalOutput;
         private System.Windows.Forms.Label subTotalLabel;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Label taxLabel;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label totalOutput;
+        private System.Windows.Forms.Label taxOutput;
+        private System.Windows.Forms.Label bar;
+        private System.Windows.Forms.Label tenderedLabel;
+        private System.Windows.Forms.TextBox tenderedInput;
+        private System.Windows.Forms.Button calculateChangeButton;
+        private System.Windows.Forms.Label changeLabel;
+        private System.Windows.Forms.Label changeOutput;
+        private System.Windows.Forms.Button printReceiptButton;
+        private System.Windows.Forms.Button newOrderButton;
     }
 }
 
