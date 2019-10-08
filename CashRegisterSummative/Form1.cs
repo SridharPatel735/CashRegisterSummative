@@ -57,16 +57,68 @@ namespace CashRegisterSummative
         {
             //Draw tools
             Graphics g = this.CreateGraphics();
-            Font receiptFont = new Font("Consolas", 12);
+            Font receiptFont = new Font("Consolas", 10);
             SolidBrush receiptBrush = new SolidBrush(Color.White);
             SolidBrush receiptBrush2 = new SolidBrush(Color.Black);
             Pen receiptPen = new Pen(Color.Black);
             SoundPlayer receiptSound = new SoundPlayer(Properties.Resources.Receipt);
 
-            //Drawing the Receipt
+            //Drawing the Receipt and Printing the Total
             g.FillRectangle(receiptBrush, 258, 20, 230, 380);
-            //g.DrawString("", titleFont, titleBrush, 20, 50);
+            Thread.Sleep(1000);
+            g.DrawString("Hambuguh Too", receiptFont, receiptBrush2, 320, 80);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Order Number: 00001", receiptFont, receiptBrush2, 270, 110);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("October 31, 2019", receiptFont, receiptBrush2, 270, 125);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Burgers          x" + burgerNumber + " @ " + BURGER_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 160);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Fries            x" + friesNumber + " @ " + FRIES_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 175);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Drinks           x" + drinksNumber + " @ " + DRINK_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 190);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Subtotal              " + subtotal.ToString("C"), receiptFont, receiptBrush2, 270, 210);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Tax                   " + tax.ToString("C"), receiptFont, receiptBrush2, 270, 225);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Total                 " + totalCost.ToString("C"), receiptFont, receiptBrush2, 270, 240);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Tendered              " + tendered.ToString("C"), receiptFont, receiptBrush2, 270, 275);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Change                " + change.ToString("C"), receiptFont, receiptBrush2, 270, 290);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+            g.DrawString("Have A Great Day!!!", receiptFont, receiptBrush2, 300, 310);
+            receiptSound.Play();
+            Thread.Sleep(1000);
+        }
 
+        private void NewOrderButton_Click(object sender, EventArgs e)
+        {
+            Graphics g = this.CreateGraphics();
+            SolidBrush receiptBrush = new SolidBrush(Color.White);
+            g.Clear(Color.DeepSkyBlue);
+
+            burgerInput.Text = "";
+            friesInput.Text = "";
+            drinksInput.Text = "";
+            subTotalOutput.Text = "";
+            totalOutput.Text = "";
+            taxOutput.Text = "";
+            changeOutput.Text = "";
+            tenderedInput.Text = "";
+            g.FillRectangle(receiptBrush, 258, 20, 230, 380);
         }
 
         public Form1()

@@ -247,6 +247,7 @@
             this.newOrderButton.TabIndex = 21;
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
             // 
             // Form1
             // 
