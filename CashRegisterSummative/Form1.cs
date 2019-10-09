@@ -16,8 +16,9 @@ using System.Media;
 /// </summary>
 namespace CashRegisterSummative
 {
-    public partial class Form1 : Form
+    public partial class register : Form
     {
+        //Varible Declaration
         const double BURGER_PRICE = 2.50;
         const double FRIES_PRICE = 2.00;
         const double DRINK_PRICE = 1.50;
@@ -28,6 +29,8 @@ namespace CashRegisterSummative
         double tendered;
         double totalCost;
         double change;
+        Random randGen = new Random();
+        int dice1Value;
 
         private void CalculateChangeButton_Click(object sender, EventArgs e)
         {
@@ -64,15 +67,17 @@ namespace CashRegisterSummative
             SoundPlayer receiptSound = new SoundPlayer(Properties.Resources.Receipt);
 
             //Drawing the Receipt and Printing the Total
-            g.FillRectangle(receiptBrush, 258, 20, 230, 380);
+            g.FillRectangle(receiptBrush, 258, 20, 230, 340);
             Thread.Sleep(1000);
-            g.DrawString("Hambuguh Too", receiptFont, receiptBrush2, 320, 80);
+            g.DrawString("HAMBUGUH TOO", receiptFont, receiptBrush2, 320, 80);
             receiptSound.Play();
             Thread.Sleep(1000);
-            g.DrawString("Order Number: 00001", receiptFont, receiptBrush2, 270, 110);
+            dice1Value = randGen.Next(1000, 9999);
+            g.DrawString("Order Number: " + dice1Value, receiptFont, receiptBrush2, 270, 110);
             receiptSound.Play();
             Thread.Sleep(1000);
-            g.DrawString("October 31, 2019", receiptFont, receiptBrush2, 270, 125);
+            g.DrawString("Date: ", receiptFont, receiptBrush2, 270, 125);
+            g.DrawString(DateTime.Now.ToString("MM-dd-yy"), receiptFont, receiptBrush2, 310, 125);
             receiptSound.Play();
             Thread.Sleep(1000);
             g.DrawString("Burgers          x" + burgerNumber + " @ " + BURGER_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 160);
@@ -106,10 +111,12 @@ namespace CashRegisterSummative
 
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
+            //Draw Tools
             Graphics g = this.CreateGraphics();
             SolidBrush receiptBrush = new SolidBrush(Color.White);
             g.Clear(Color.DeepSkyBlue);
 
+            //New Order
             burgerInput.Text = "";
             friesInput.Text = "";
             drinksInput.Text = "";
@@ -118,10 +125,10 @@ namespace CashRegisterSummative
             taxOutput.Text = "";
             changeOutput.Text = "";
             tenderedInput.Text = "";
-            g.FillRectangle(receiptBrush, 258, 20, 230, 380);
+            g.FillRectangle(receiptBrush, 258, 20, 230, 340);
         }
 
-        public Form1()
+        public register()
         {
             InitializeComponent();
         }

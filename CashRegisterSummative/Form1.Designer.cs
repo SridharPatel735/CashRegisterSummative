@@ -1,6 +1,6 @@
 ﻿namespace CashRegisterSummative
 {
-    partial class Form1
+    partial class register
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(register));
             this.burgerLabel = new System.Windows.Forms.Label();
             this.drinksLabel = new System.Windows.Forms.Label();
             this.friesLabel = new System.Windows.Forms.Label();
@@ -153,11 +154,11 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.titleLabel.BackColor = System.Drawing.Color.Silver;
             this.titleLabel.Font = new System.Drawing.Font("Millenium BdEx BT", 30.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(-7, -2);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(518, 64);
+            this.titleLabel.Size = new System.Drawing.Size(518, 61);
             this.titleLabel.TabIndex = 11;
             this.titleLabel.Text = "Hambuguh Too";
             // 
@@ -249,7 +250,7 @@
             this.newOrderButton.UseVisualStyleBackColor = true;
             this.newOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
             // 
-            // Form1
+            // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,8 +278,9 @@
             this.Controls.Add(this.friesLabel);
             this.Controls.Add(this.drinksLabel);
             this.Controls.Add(this.burgerLabel);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "register";
+            this.Text = "Hambuguh Too";
             this.ResumeLayout(false);
             this.PerformLayout();
 
