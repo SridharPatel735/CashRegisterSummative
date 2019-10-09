@@ -117,9 +117,9 @@
             // subTotalOutput
             // 
             this.subTotalOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotalOutput.Location = new System.Drawing.Point(156, 205);
+            this.subTotalOutput.Location = new System.Drawing.Point(146, 205);
             this.subTotalOutput.Name = "subTotalOutput";
-            this.subTotalOutput.Size = new System.Drawing.Size(63, 23);
+            this.subTotalOutput.Size = new System.Drawing.Size(69, 23);
             this.subTotalOutput.TabIndex = 7;
             // 
             // subTotalLabel
@@ -165,17 +165,17 @@
             // totalOutput
             // 
             this.totalOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalOutput.Location = new System.Drawing.Point(156, 256);
+            this.totalOutput.Location = new System.Drawing.Point(146, 256);
             this.totalOutput.Name = "totalOutput";
-            this.totalOutput.Size = new System.Drawing.Size(59, 23);
+            this.totalOutput.Size = new System.Drawing.Size(73, 23);
             this.totalOutput.TabIndex = 12;
             // 
             // taxOutput
             // 
             this.taxOutput.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxOutput.Location = new System.Drawing.Point(156, 228);
+            this.taxOutput.Location = new System.Drawing.Point(146, 228);
             this.taxOutput.Name = "taxOutput";
-            this.taxOutput.Size = new System.Drawing.Size(59, 23);
+            this.taxOutput.Size = new System.Drawing.Size(69, 23);
             this.taxOutput.TabIndex = 13;
             // 
             // bar

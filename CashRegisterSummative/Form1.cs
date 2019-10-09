@@ -162,12 +162,11 @@ namespace CashRegisterSummative
             }
 
             subtotal = (burgerNumber * BURGER_PRICE) + (friesNumber * FRIES_PRICE) + (drinksNumber * DRINK_PRICE);
-            subTotalOutput.Text = subtotal.ToString("C");
-
             tax = subtotal * TAX;
-            taxOutput.Text = tax.ToString("C");
-
             totalCost = subtotal + tax;
+
+            subTotalOutput.Text = subtotal.ToString("C");
+            taxOutput.Text = tax.ToString("C");          
             totalOutput.Text = totalCost.ToString("C");
         }
     }
