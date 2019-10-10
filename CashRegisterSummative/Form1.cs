@@ -68,45 +68,37 @@ namespace CashRegisterSummative
 
             //Drawing the Receipt and Printing the Total
             g.FillRectangle(receiptBrush, 258, 20, 230, 340);
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("HAMBUGUH TOO", receiptFont, receiptBrush2, 320, 80);
             receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             dice1Value = randGen.Next(1000, 9999);
             g.DrawString("Order Number: " + dice1Value, receiptFont, receiptBrush2, 270, 110);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Date: ", receiptFont, receiptBrush2, 270, 125);
             g.DrawString(DateTime.Now.ToString("MM-dd-yy"), receiptFont, receiptBrush2, 310, 125);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Burgers          x" + burgerNumber + " @ " + BURGER_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 160);
             receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Fries            x" + friesNumber + " @ " + FRIES_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 175);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Drinks           x" + drinksNumber + " @ " + DRINK_PRICE.ToString("C"), receiptFont, receiptBrush2, 270, 190);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Subtotal              " + subtotal.ToString("C"), receiptFont, receiptBrush2, 270, 210);
             receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Tax                   " + tax.ToString("C"), receiptFont, receiptBrush2, 270, 225);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Total                 " + totalCost.ToString("C"), receiptFont, receiptBrush2, 270, 240);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Tendered              " + tendered.ToString("C"), receiptFont, receiptBrush2, 270, 275);
             receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Change                " + change.ToString("C"), receiptFont, receiptBrush2, 270, 290);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
             g.DrawString("Have A Great Day!!!", receiptFont, receiptBrush2, 300, 310);
-            receiptSound.Play();
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
         }
 
         private void NewOrderButton_Click(object sender, EventArgs e)
@@ -126,6 +118,17 @@ namespace CashRegisterSummative
             changeOutput.Text = "";
             tenderedInput.Text = "";
             g.FillRectangle(receiptBrush, 258, 20, 230, 340);
+
+            //Setting everything to Zero
+            burgerNumber = 0;
+            friesNumber = 0;
+            drinksNumber = 0;
+            subtotal = 0;
+            tax = 0;
+            tendered = 0;
+            totalCost = 0;
+            change = 0;
+
         }
 
         public register()
